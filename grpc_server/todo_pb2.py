@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\ntodo.proto\".\n\x0e\x41\x64\x64TodoRequest\x12\x0c\n\x04task\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\"/\n\x0f\x41\x64\x64TodoResponse\x12\x0c\n\x04task\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\"\x1c\n\x0eGetTodoRequest\x12\n\n\x02id\x18\x01 \x01(\x05\";\n\x0fGetTodoResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04task\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\"=\n\x11UpdateTodoRequest\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04task\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\">\n\x12UpdateTodoResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04task\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\"\x1f\n\x11\x44\x65leteTodoRequest\x12\n\n\x02id\x18\x01 \x01(\x05\" \n\x12\x44\x65leteTodoResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x32\xd7\x01\n\x0bTodoService\x12,\n\x07GetTodo\x12\x0f.GetTodoRequest\x1a\x10.GetTodoResponse\x12,\n\x07\x41\x64\x64Todo\x12\x0f.AddTodoRequest\x1a\x10.AddTodoResponse\x12\x35\n\nUpdateTodo\x12\x12.UpdateTodoRequest\x1a\x13.UpdateTodoResponse\x12\x35\n\nDeleteTodo\x12\x12.DeleteTodoRequest\x1a\x13.DeleteTodoResponseb\x06proto3'
+  serialized_pb=b'\n\ntodo.proto\".\n\x0e\x41\x64\x64TodoRequest\x12\x0c\n\x04task\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\"/\n\x0f\x41\x64\x64TodoResponse\x12\x0c\n\x04task\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\"\x1c\n\x0eGetTodoRequest\x12\n\n\x02id\x18\x01 \x01(\x05\";\n\x0fGetTodoResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04task\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\"0\n\x04Todo\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04task\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\"/\n\x0fGetTodosRequest\x12\x0c\n\x04task\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\"(\n\x10GetTodosResponse\x12\x14\n\x05todos\x18\x01 \x03(\x0b\x32\x05.Todo\"=\n\x11UpdateTodoRequest\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04task\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\">\n\x12UpdateTodoResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04task\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\"\x1f\n\x11\x44\x65leteTodoRequest\x12\n\n\x02id\x18\x01 \x01(\x05\" \n\x12\x44\x65leteTodoResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x32\x88\x02\n\x0bTodoService\x12,\n\x07GetTodo\x12\x0f.GetTodoRequest\x1a\x10.GetTodoResponse\x12,\n\x07\x41\x64\x64Todo\x12\x0f.AddTodoRequest\x1a\x10.AddTodoResponse\x12\x35\n\nUpdateTodo\x12\x12.UpdateTodoRequest\x1a\x13.UpdateTodoResponse\x12\x35\n\nDeleteTodo\x12\x12.DeleteTodoRequest\x1a\x13.DeleteTodoResponse\x12/\n\x08GetTodos\x12\x10.GetTodosRequest\x1a\x11.GetTodosResponseb\x06proto3'
 )
 
 
@@ -181,6 +181,123 @@ _GETTODORESPONSE = _descriptor.Descriptor(
 )
 
 
+_TODO = _descriptor.Descriptor(
+  name='Todo',
+  full_name='Todo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='Todo.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='task', full_name='Todo.task', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='Todo.status', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=202,
+  serialized_end=250,
+)
+
+
+_GETTODOSREQUEST = _descriptor.Descriptor(
+  name='GetTodosRequest',
+  full_name='GetTodosRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='task', full_name='GetTodosRequest.task', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='GetTodosRequest.status', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=252,
+  serialized_end=299,
+)
+
+
+_GETTODOSRESPONSE = _descriptor.Descriptor(
+  name='GetTodosResponse',
+  full_name='GetTodosResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='todos', full_name='GetTodosResponse.todos', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=301,
+  serialized_end=341,
+)
+
+
 _UPDATETODOREQUEST = _descriptor.Descriptor(
   name='UpdateTodoRequest',
   full_name='UpdateTodoRequest',
@@ -222,8 +339,8 @@ _UPDATETODOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=202,
-  serialized_end=263,
+  serialized_start=343,
+  serialized_end=404,
 )
 
 
@@ -268,8 +385,8 @@ _UPDATETODORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=265,
-  serialized_end=327,
+  serialized_start=406,
+  serialized_end=468,
 )
 
 
@@ -300,8 +417,8 @@ _DELETETODOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=329,
-  serialized_end=360,
+  serialized_start=470,
+  serialized_end=501,
 )
 
 
@@ -332,14 +449,18 @@ _DELETETODORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=362,
-  serialized_end=394,
+  serialized_start=503,
+  serialized_end=535,
 )
 
+_GETTODOSRESPONSE.fields_by_name['todos'].message_type = _TODO
 DESCRIPTOR.message_types_by_name['AddTodoRequest'] = _ADDTODOREQUEST
 DESCRIPTOR.message_types_by_name['AddTodoResponse'] = _ADDTODORESPONSE
 DESCRIPTOR.message_types_by_name['GetTodoRequest'] = _GETTODOREQUEST
 DESCRIPTOR.message_types_by_name['GetTodoResponse'] = _GETTODORESPONSE
+DESCRIPTOR.message_types_by_name['Todo'] = _TODO
+DESCRIPTOR.message_types_by_name['GetTodosRequest'] = _GETTODOSREQUEST
+DESCRIPTOR.message_types_by_name['GetTodosResponse'] = _GETTODOSRESPONSE
 DESCRIPTOR.message_types_by_name['UpdateTodoRequest'] = _UPDATETODOREQUEST
 DESCRIPTOR.message_types_by_name['UpdateTodoResponse'] = _UPDATETODORESPONSE
 DESCRIPTOR.message_types_by_name['DeleteTodoRequest'] = _DELETETODOREQUEST
@@ -373,6 +494,27 @@ GetTodoResponse = _reflection.GeneratedProtocolMessageType('GetTodoResponse', (_
   # @@protoc_insertion_point(class_scope:GetTodoResponse)
   })
 _sym_db.RegisterMessage(GetTodoResponse)
+
+Todo = _reflection.GeneratedProtocolMessageType('Todo', (_message.Message,), {
+  'DESCRIPTOR' : _TODO,
+  '__module__' : 'todo_pb2'
+  # @@protoc_insertion_point(class_scope:Todo)
+  })
+_sym_db.RegisterMessage(Todo)
+
+GetTodosRequest = _reflection.GeneratedProtocolMessageType('GetTodosRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETTODOSREQUEST,
+  '__module__' : 'todo_pb2'
+  # @@protoc_insertion_point(class_scope:GetTodosRequest)
+  })
+_sym_db.RegisterMessage(GetTodosRequest)
+
+GetTodosResponse = _reflection.GeneratedProtocolMessageType('GetTodosResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETTODOSRESPONSE,
+  '__module__' : 'todo_pb2'
+  # @@protoc_insertion_point(class_scope:GetTodosResponse)
+  })
+_sym_db.RegisterMessage(GetTodosResponse)
 
 UpdateTodoRequest = _reflection.GeneratedProtocolMessageType('UpdateTodoRequest', (_message.Message,), {
   'DESCRIPTOR' : _UPDATETODOREQUEST,
@@ -411,8 +553,8 @@ _TODOSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=397,
-  serialized_end=612,
+  serialized_start=538,
+  serialized_end=802,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetTodo',
@@ -451,6 +593,16 @@ _TODOSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETETODOREQUEST,
     output_type=_DELETETODORESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetTodos',
+    full_name='TodoService.GetTodos',
+    index=4,
+    containing_service=None,
+    input_type=_GETTODOSREQUEST,
+    output_type=_GETTODOSRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

@@ -16,12 +16,24 @@ function main() {
 
     case 'get':
       const GetTodoRequest = new messages.GetTodoRequest();
-      GetTodoRequest.setId(2);
+      GetTodoRequest.setId(3);
       client.getTodo(GetTodoRequest, function (err, response) {
         if (err) {
           console.log('this thing broke!', err);
         } else {
           console.log('response from python:', response);
+        }
+      })
+      break;
+    
+    case 'list':
+      const GetTodosRequest = new messages.GetTodosRequest();
+      // GetTodosRequest.setTask("Learn")
+      client.getTodos(GetTodosRequest, function (err, response) {
+        if (err) {
+          console.log('this thing broke!', err);
+        } else {
+          console.log('response from python:', response.array);
         }
       })
       break;

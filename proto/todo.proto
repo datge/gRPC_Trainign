@@ -5,6 +5,7 @@ service TodoService{
   rpc AddTodo(AddTodoRequest) returns (AddTodoResponse);
   rpc UpdateTodo(UpdateTodoRequest) returns (UpdateTodoResponse);
   rpc DeleteTodo(DeleteTodoRequest) returns (DeleteTodoResponse);
+  rpc GetTodos(GetTodosRequest) returns (GetTodosResponse);
 }
 
 message AddTodoRequest {
@@ -25,6 +26,21 @@ message GetTodoResponse {
   int32 id = 1;
   string task = 2;
   string status = 3;
+}
+
+message Todo {
+  int32 id = 1;
+  string task = 2;
+  string status = 3;
+}
+
+message GetTodosRequest {
+  string task = 1;
+  string status = 2;
+}
+
+message GetTodosResponse {
+  repeated Todo todos = 1;
 }
 
 message UpdateTodoRequest {

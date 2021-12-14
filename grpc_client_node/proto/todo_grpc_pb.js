@@ -70,6 +70,28 @@ function deserialize_GetTodoResponse(buffer_arg) {
   return todo_pb.GetTodoResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_GetTodosRequest(arg) {
+  if (!(arg instanceof todo_pb.GetTodosRequest)) {
+    throw new Error('Expected argument of type GetTodosRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_GetTodosRequest(buffer_arg) {
+  return todo_pb.GetTodosRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_GetTodosResponse(arg) {
+  if (!(arg instanceof todo_pb.GetTodosResponse)) {
+    throw new Error('Expected argument of type GetTodosResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_GetTodosResponse(buffer_arg) {
+  return todo_pb.GetTodosResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_UpdateTodoRequest(arg) {
   if (!(arg instanceof todo_pb.UpdateTodoRequest)) {
     throw new Error('Expected argument of type UpdateTodoRequest');
@@ -137,6 +159,17 @@ var TodoServiceService = exports.TodoServiceService = {
     requestDeserialize: deserialize_DeleteTodoRequest,
     responseSerialize: serialize_DeleteTodoResponse,
     responseDeserialize: deserialize_DeleteTodoResponse,
+  },
+  getTodos: {
+    path: '/TodoService/GetTodos',
+    requestStream: false,
+    responseStream: false,
+    requestType: todo_pb.GetTodosRequest,
+    responseType: todo_pb.GetTodosResponse,
+    requestSerialize: serialize_GetTodosRequest,
+    requestDeserialize: deserialize_GetTodosRequest,
+    responseSerialize: serialize_GetTodosResponse,
+    responseDeserialize: deserialize_GetTodosResponse,
   },
 };
 

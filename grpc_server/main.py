@@ -2,8 +2,8 @@ import sqlite3
 import grpc
 import concurrent
 from concurrent import futures
-import proto.todo_pb2_grpc as todo_pb2_grpc
-import proto.todo_pb2 as todo_pb2
+import todo_pb2_grpc as todo_pb2_grpc
+import todo_pb2 as todo_pb2
 
 class TodoServiceServicer(todo_pb2_grpc.TodoServiceServicer):
   def GetTodo(self, request, context):
@@ -15,6 +15,19 @@ class TodoServiceServicer(todo_pb2_grpc.TodoServiceServicer):
       response.id = row[0]
       response.task = row[1]
       response.status = row[2]
+    return response
+  
+  def GetTodos(self, request, context):
+    print("We got something! list")
+    con = sqlite3.connect('todos.db')
+    cur = con.cursor();
+    response = todo_pb2.GetTodosResponse();
+    for row in cur.execute(f"SELECT * FROM todos"):
+      print(row)
+      todo = response.todos.add()  
+      todo.id = row[0]
+      todo.task = row[1]
+      todo.status = row[2]
     return response
   
   def AddTodo(self, request, context):
@@ -54,10 +67,11 @@ class TodoServiceServicer(todo_pb2_grpc.TodoServiceServicer):
     
 def main():
   # print("Hello World!")
+  # con = sqlite3.connect('todos.db')
   # cur = con.cursor()
-  # # cur.execute("CREATE TABLE IF NOT EXISTS todos (id INTEGER PRIMARY KEY, task text, status text)")
-  # # cur.execute("INSERT INTO todos (task, status) VALUES ('Learn SQLite', 'incomplete')")
-  # # con.commit()
+  # cur.execute("CREATE TABLE IF NOT EXISTS todos (id INTEGER PRIMARY KEY, task text, status text)")
+  # cur.execute("INSERT INTO todos (task, status) VALUES ('Learn SQLite', 'incomplete')")
+  # con.commit()
   # for row in cur.execute("SELECT * FROM todos"):
   #   print(row)
   # con.close()
